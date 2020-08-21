@@ -10,16 +10,16 @@ const LoginWrapper = styled.div`
   .bg-right {
     background: linear-gradient(360deg, #2655ee 0%, #34b3ff 50%);
     text-align: center;
-    height: 50rem;
+    /* min-height: 20rem; */
   }
 
   img {
     margin: 10em auto;
-    max-height: 60%;
+    max-height: 30%;
     min-width: 30rem;
   }
   .formview {
-    height: 50rem;
+    /* min-height: 20rem; */
     width: 100%;
     background: white;
     box-shadow: 4px 4px 4px lightsteelblue;

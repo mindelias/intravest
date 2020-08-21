@@ -43,7 +43,10 @@ const SignUp: React.FC<props> = ({ reg, Auth, Alert, error, loading }) => {
     type: "",
     password: "",
     confirm_password: "",
+    company_name: "",
+    phone_number: "",
   });
+  const [isBusiness, setBusiness] = useState(false);
 
   const {
     first_name,
@@ -52,6 +55,8 @@ const SignUp: React.FC<props> = ({ reg, Auth, Alert, error, loading }) => {
     type,
     password,
     confirm_password,
+    company_name,
+    phone_number,
   } = user;
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -78,9 +83,21 @@ const SignUp: React.FC<props> = ({ reg, Auth, Alert, error, loading }) => {
     }
   };
   const onchangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(user);
+    
+    if (user.type === "business") {
+      setBusiness(true);
+    }
+    
     setUser({ ...user, [e.target.name]: e.target.value });
   };
   const onchangeInputSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    console.log(user);
+    
+    if (user.type ==="business") {
+      setBusiness(true);
+      console.log(user.type);
+    }
     setUser({ ...user, type: e.target.value });
   };
   // html view
@@ -123,19 +140,8 @@ const SignUp: React.FC<props> = ({ reg, Auth, Alert, error, loading }) => {
                     className="form-control"
                     id="full"
                     name="last_name"
-                    placeholder="Enter fullname"
-                    value={first_name}
-                    onChange={onchangeInput}
-                  />
-                </div>
-                <div className="form-group">
-                  <input
-                    type="email"
-                    className="form-control"
-                    id="email"
-                    placeholder="Enter email"
-                    name="email"
-                    value={email}
+                    placeholder="Enter lastname"
+                    value={last_name}
                     onChange={onchangeInput}
                   />
                 </div>
@@ -149,6 +155,42 @@ const SignUp: React.FC<props> = ({ reg, Auth, Alert, error, loading }) => {
                     <option value="merchant">Merchant</option>
                     <option value="business">Business</option>
                   </select>
+                </div>
+                <div className="form-group">
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="email"
+                    placeholder="Enter email"
+                    name="email"
+                    value={email}
+                    onChange={onchangeInput}
+                  />
+                </div>
+
+                <div className="form-group">
+                  {isBusiness && (
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="full"
+                      name="company_name"
+                      placeholder="Enter comapny name"
+                      value={company_name}
+                      onChange={onchangeInput}
+                    />
+                  )}
+                  {isBusiness && (
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="full"
+                      name="phone_number"
+                      placeholder="Enter phone"
+                      value={phone_number}
+                      onChange={onchangeInput}
+                    />
+                  )}
                 </div>
                 <div className="form-group">
                   <input
