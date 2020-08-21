@@ -97,9 +97,9 @@ const SignUp: React.FC<props> = ({ reg, Auth, Alert, error, loading }) => {
               <img src={financee} alt="sigup-igs" />
             </div>
             <div className="formview col-md-6 col-xs-12">
-              <form className="" onSubmit={handleSubmit}>
-                <h5 className="text-center my-3"> Register to get started </h5>
                 <AlertView />
+              <form className="" onSubmit={handleSubmit}>
+                <h5 className="text-center  my-2"> Register to get started </h5>
                 <div className="form-group">
                   <input
                     type="text"
