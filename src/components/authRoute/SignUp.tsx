@@ -24,12 +24,14 @@ const SignUp: React.FC<props> = ({ reg, Auth, Alert, error, loading }) => {
     if (Auth === true) {
       history.push("/createacc");
     }
-    if (error) {
+    if (error && error.error) {
+      console.log(error);
       Alert(error["issue"], "danger");
-      const arr = Object.keys(error);
+      const getErr = error.error;
+      const arr = Object.keys(getErr);
       // eslint-disable-next-line
       arr.map((item) => {
-        Alert(error[item], "danger");
+        Alert(getErr[item], "danger");
       });
       console.log(arr);
     }
@@ -43,6 +45,7 @@ const SignUp: React.FC<props> = ({ reg, Auth, Alert, error, loading }) => {
     type: "",
     password: "",
     confirm_password: "",
+    business_name: "",
     company_name: "",
     phone_number: "",
   });
@@ -55,8 +58,9 @@ const SignUp: React.FC<props> = ({ reg, Auth, Alert, error, loading }) => {
     type,
     password,
     confirm_password,
-    company_name,
+    business_name,
     phone_number,
+    company_name,
   } = user;
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -84,17 +88,17 @@ const SignUp: React.FC<props> = ({ reg, Auth, Alert, error, loading }) => {
   };
   const onchangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(user);
-    
-    if (user.type === "business") {
+
+    if (user.type === "business" || user.type === "merchant") {
       setBusiness(true);
     }
-    
+
     setUser({ ...user, [e.target.name]: e.target.value });
   };
   const onchangeInputSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
     console.log(user);
-    
-    if (user.type ==="business") {
+
+    if (user.type === "business") {
       setBusiness(true);
       console.log(user.type);
     }
@@ -174,9 +178,9 @@ const SignUp: React.FC<props> = ({ reg, Auth, Alert, error, loading }) => {
                       type="text"
                       className="form-control"
                       id="full"
-                      name="company_name"
-                      placeholder="Enter comapny name"
-                      value={company_name}
+                      name="phone_number"
+                      placeholder="Enter phone"
+                      value={phone_number}
                       onChange={onchangeInput}
                     />
                   )}
@@ -185,9 +189,20 @@ const SignUp: React.FC<props> = ({ reg, Auth, Alert, error, loading }) => {
                       type="text"
                       className="form-control"
                       id="full"
-                      name="phone_number"
-                      placeholder="Enter phone"
-                      value={phone_number}
+                      name="business_name"
+                      placeholder="Enter busines name"
+                      value={business_name}
+                      onChange={onchangeInput}
+                    />
+                  )}
+                  {isBusiness && (
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="full"
+                      name="company_name"
+                      placeholder="Enter busines name"
+                      value={company_name}
                       onChange={onchangeInput}
                     />
                   )}

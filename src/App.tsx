@@ -12,7 +12,9 @@ import "./App.css";
 import store from "./components/redux/store";
 import Signup from "./components/authRoute/SignUp";
 import SignIn from "./components/authRoute/SignIn";
-import setAuthToken from "./utils/setAuthToken"; ;
+import setAuthToken from "./utils/setAuthToken";
+import ShowAccoutSuccessful from "./pages/Success";
+ ;
 
 
 if (localStorage.getItem("Authorization")) {
@@ -33,6 +35,9 @@ function App() {
             </Route>
             <Route exact path="/login">
               <SignIn />
+            </Route>
+            <Route exact path="/createacc">
+              <ShowAccoutSuccessful />
             </Route>
           </Switch>
         </Router>

@@ -64,18 +64,16 @@ export const Register = (data: formData) => async (dispatch: any) => {
 
     dispatch({
       type: REGISTER_SUCCESS,
-      payload: res.data.payload.token,
+      payload: res.data.payload,
     });
     // stop loading
     dispatch(loading(false));
     loadUser();
   } catch (error) {
-    console.log(error);
-    
     dispatch(loading(false));
     dispatch({
       type: REGISTER_FAIL,
-      payload: error.response.data.error,
+      payload: error.response.data,
     });
   }
 };
