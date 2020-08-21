@@ -12,6 +12,7 @@ import img5 from "../assets/Laptop.png";
 import img6 from "../assets/Portable1.png";
 // import img1 from "../../assets/img5.jpg";
 function Carousel() {
+  // eslint-disable-next-line 
   const [respons, setRes] = useState({
     0: {
       items: 2,
@@ -25,7 +26,7 @@ function Carousel() {
       items: 1,
     },
   });
-  setRes(respons);
+  // setRes(respons);
 
   return (
     <div>
