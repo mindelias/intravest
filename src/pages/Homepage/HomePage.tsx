@@ -51,7 +51,7 @@ function HomePage() {
             size={18}
             weight="normal"
             className="mt-5"
-            lineHeight={0.01}
+            // lineHeight={0.01}
           ></P>
           <P
             color="darkGray2"

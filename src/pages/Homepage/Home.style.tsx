@@ -110,7 +110,7 @@ export const HomePageWrapper = styled.div`
            }
            .section5-last {
              max-width: 59.5rem;
-             height: 20.2rem;
+             max-height: 20.2rem;
              background: #f4f4f4 0% 0% no-repeat padding-box;
              box-shadow: 0px 3px 6px #00000029;
              border-radius: 30px;
@@ -160,6 +160,7 @@ clip-path: polygon(50% 0%, 100% 0, 100% 35%, 100% 68%, 76% 91%, 40% 100%, 0 100%
              }
            }
              }
+             
              
              @media (max-width: 420px) {
              .section2,.section3,.section4,.section5,.section6 {

@@ -67,10 +67,6 @@ function Carousel() {
           </div>
 
           <div>
-            <img className="img" src={img6} alt='slider' />
-          </div>
-
-          <div>
             <img className="img" src={img1} alt='slider' />
           </div>
         </OwlCarousel>
