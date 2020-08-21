@@ -5,7 +5,7 @@ import { SET_ALERT, REMOVE_ALERT } from "../types";
 // const initialState: [] = [];
 
 // Set Alert
-export const Alert = (msg: string, type: string, timeout = 5000) => async (
+export const Alert = (msg: string, type: string, timeout = 1000) => async (
   dispatch: any
 ) => {
 
@@ -17,6 +17,6 @@ export const Alert = (msg: string, type: string, timeout = 5000) => async (
   setTimeout(
     () => dispatch({ type: REMOVE_ALERT, payload: id }),
 
-    timeout
+    15000
   );
 };

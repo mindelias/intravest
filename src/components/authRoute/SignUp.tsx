@@ -26,6 +26,12 @@ const SignUp: React.FC<props> = ({ reg, Auth, Alert, error, loading }) => {
     }
     if (error) {
       Alert(error["issue"], "danger");
+      const arr = Object.keys(error);
+      // eslint-disable-next-line
+      arr.map((item) => {
+        Alert(error[item], "danger");
+      });
+      console.log(arr);
     }
     // eslint-disable-next-line
   }, [reg, Auth, error]);
@@ -55,7 +61,7 @@ const SignUp: React.FC<props> = ({ reg, Auth, Alert, error, loading }) => {
     // const valid = regex.test(password);
     // console.log(valid, user);
     // if (!valid) {
-    //   Alert("Please enter a valid password", "danger"); 
+    //   Alert("Please enter a valid password", "danger");
     // }
 
     if (!first_name || !last_name || !email || !password || !confirm_password) {
@@ -81,7 +87,7 @@ const SignUp: React.FC<props> = ({ reg, Auth, Alert, error, loading }) => {
 
   return (
     <div>
-      <NavBar/>
+      <NavBar />
       <LoginWrapper className="container">
         {loading ? (
           <div className="loader">
@@ -97,7 +103,7 @@ const SignUp: React.FC<props> = ({ reg, Auth, Alert, error, loading }) => {
               <img src={financee} alt="sigup-igs" />
             </div>
             <div className="formview col-md-6 col-xs-12">
-                <AlertView />
+              <AlertView />
               <form className="" onSubmit={handleSubmit}>
                 <h5 className="text-center  my-2"> Register to get started </h5>
                 <div className="form-group">
@@ -136,7 +142,6 @@ const SignUp: React.FC<props> = ({ reg, Auth, Alert, error, loading }) => {
                 <div className="form-group">
                   <select
                     className="form-control"
-                    defaultValue={type}
                     value={type}
                     onChange={onchangeInputSelect}
                   >

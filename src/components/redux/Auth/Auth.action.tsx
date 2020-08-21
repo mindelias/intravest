@@ -70,10 +70,12 @@ export const Register = (data: formData) => async (dispatch: any) => {
     dispatch(loading(false));
     loadUser();
   } catch (error) {
+    console.log(error);
+    
     dispatch(loading(false));
     dispatch({
       type: REGISTER_FAIL,
-      payload: error.response.data.errors,
+      payload: error.response.data.error,
     });
   }
 };
