@@ -49,16 +49,16 @@ const SignUp: React.FC<props> = ({ reg, Auth, Alert, error, loading }) => {
   } = user;
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const regex = new RegExp(
-      "/^(?=.*[A-Za-z])(?=.*[A-Z])(?=.*d)(?=.*[@$!%*#?&])[A-Za-zd@$!%*#?&]{8,}$/"
-    );
-    const valid = regex.test(password);
-    console.log(valid, user);
-    if (!valid) {
-      Alert("Please enter a valid password", "danger"); 
-    }
+    // const regex = new RegExp(
+    //   "/^(?=.*[A-Za-z])(?=.*[A-Z])(?=.*d)(?=.*[@$!%*#?&])[A-Za-zd@$!%*#?&]{8,}$/"
+    // );
+    // const valid = regex.test(password);
+    // console.log(valid, user);
+    // if (!valid) {
+    //   Alert("Please enter a valid password", "danger"); 
+    // }
 
-    if (!first_name || last_name || !email || !password || !confirm_password) {
+    if (!first_name || !last_name || !email || !password || !confirm_password) {
       Alert("Please enter all fields", "danger");
     } else if (password !== confirm_password) {
       Alert("Password do not match", "danger");
