@@ -57,7 +57,7 @@ export const Register = (data: formData) => async (dispatch: any) => {
   };
   try {
     const res = await axios.post(
-      BASE_URL + "/api/v1/auth/signup",
+      BASE_URL + "/register",
       data,
       config
     );
@@ -89,7 +89,7 @@ export const Login = (data: loginData) => async (dispatch: any) => {
   };
   try {
     const res = await axios.post(
-      BASE_URL + "/api/v1/auth/signin",
+      BASE_URL + "/login",
       data,
       config
     );
