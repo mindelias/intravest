@@ -107,9 +107,9 @@ export const Login = (data: loginData) => async (dispatch: any) => {
     console.log(error);
     dispatch({
       type: LOGIN_FAIL,
-      payload: error.response.data.error,
+      payload: error.response.data,
     });
-    console.log(error.response.data.error);
+    console.log(error.response.data);
   }
 };
 

@@ -24,9 +24,17 @@ const SignIn: React.FC<props> = ({ reg, Auth, Alert, error, loading }) => {
     if (Auth === true) {
       history.push("/createacc");
     }
-    if (error) {
-      Alert(error, "danger");
-    }
+     if (error && error.error) {
+       console.log(error);
+       Alert(error["issue"], "danger");
+       const getErr = error.error;
+       const arr = Object.keys(getErr);
+       // eslint-disable-next-line
+       arr.map((item) => {
+         Alert(getErr[item], "danger");
+       });
+       console.log(arr);
+     }
     // eslint-disable-next-line
   }, [reg, Auth, error]);
 
