@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 const LoginWrapper = styled.div`
   /* max-height:36em; */
   width: 70%;
@@ -10,25 +9,26 @@ const LoginWrapper = styled.div`
   .bg-right {
     background: linear-gradient(360deg, #2655ee 0%, #34b3ff 50%);
     text-align: center;
-    /* min-height: 20rem; */
+    max-height: 100vh;
+    img {
+      margin: 10em auto;
+      max-height: 30%;
+      /* min-width: 30rem; */
+    }
   }
 
-  img {
-    margin: 10em auto;
-    max-height: 30%;
-    min-width: 30rem;
-  }
   .formview {
     /* min-height: 20rem; */
     width: 100%;
     background: white;
     box-shadow: 4px 4px 4px lightsteelblue;
     padding: 1rem;
+    max-height: 100vh!important;
   }
   form {
     /* margin: 2rem 0em; */
-    h5{
-      font-size:1.8rem;
+    h5 {
+      font-size: 1.8rem;
     }
     /* max-height: 20em; */
     input,
